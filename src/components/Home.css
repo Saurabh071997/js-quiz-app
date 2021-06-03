@@ -1,0 +1,28 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    /* width:100vw; */
+    min-height: 100vh;
+}
+
+.img-main{
+    width:100%;
+    height:80vh
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.container-txt{
+    margin:1rem auto;
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width: 600px) {
+    .img-main{
+        width:100%;
+        height:60vh
+    }
+}

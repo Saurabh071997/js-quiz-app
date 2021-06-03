@@ -1,0 +1,35 @@
+footer{
+    width:100%;
+    padding:1rem 0rem;
+    background-color: #334155;
+}
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin:0rem auto;
+}
+
+.footer-txt{
+    font-size: 1.65rem;
+    margin:1rem auto;
+    font-weight: bold;
+    color:#38BDF8;
+}
+
+.footer-link-bar{
+    display: flex;
+    margin:0.5rem auto;
+    justify-content: space-between;
+}
+
+.footer-social-link{
+    cursor: pointer;
+    margin:0rem 0.5rem;
+}
+
+.footer-social-link-img{
+    height:1.65rem;
+    width:1.65rem;
+}

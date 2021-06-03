@@ -43,7 +43,7 @@ const webpackConfig = {
 
 	plugins: [
 		new HtmlWebpackPlugin({
-			title: "Vanilla JS Starter",
+			title: "fandomQUIZ",
 			template: path.resolve(__dirname, "src", "index.html")
 		}),
 		new ESLintPlugin({
