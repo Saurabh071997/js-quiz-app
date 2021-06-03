@@ -6,6 +6,7 @@ const Home = ()=>{
         <img src=${Banner} alt="banner" class="img-main" />
         <div class="container">
             <div class="container-txt">Choose and Play</div>
+            <div class="container-block"></div>
         </div>
     </div>`
 }

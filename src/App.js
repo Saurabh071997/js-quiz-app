@@ -1,4 +1,3 @@
-// import _ from "lodash";
 import './App.css'
 import Navigation from './components/Navigation'
 import Home from './components/Home'
