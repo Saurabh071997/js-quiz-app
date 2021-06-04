@@ -3,6 +3,7 @@ import "regenerator-runtime/runtime.js"
 import ('./favicon.png')
 import App from './App'
 import QuizPage from './components/QuizPage'
+import QuizResult from './components/QuizResult'
 
 
 const getCategoryData = async() => { 
@@ -38,16 +39,21 @@ const PlayQuiz = () =>{
 
 
     const showQuestions = (questionset , category_item) =>{
-        const TOTAL_QUESTIONS = 5
+        let score = 0
+        const TOTAL_QUESTIONS = questionset.length
         let userAnswerList = [];
         let currentQuestionNo = 0
         console.log(questionset)
         document.querySelector('#route').innerHTML = QuizPage(category_item.dataset.itemName)
         document.querySelector("#exit").addEventListener('click', ()=>{window.location.reload()}) 
         document.querySelector('#finish').addEventListener('click', ()=>{
-            console.log("Quiz Finished")
-            console.log(userAnswerList)
+            document.querySelector('#route').innerHTML = QuizResult(score, userAnswerList)
+            document.querySelector('#btn-play').addEventListener('click', ()=>{
+                window.location.reload()
+            })
+        
         })
+        
         
         const renderQuestion = ()=>{
             document.querySelector('.quiz-question').innerHTML = questionset[currentQuestionNo].question 
@@ -63,6 +69,11 @@ const PlayQuiz = () =>{
                 optionItem.addEventListener('click', ()=>{
                     console.log(optionItem)
                     userAnswerList.push({...questionset[currentQuestionNo] , userAnswer: optionItem.dataset.optionid, userAnswerValue:optionItem.innerHTML})
+
+                    let selectedOption = questionset[currentQuestionNo].options.find(({_id})=> _id === optionItem.dataset.optionid)
+                    if(selectedOption?.isCorrect){
+                        score+=5
+                    }
                     renderNextQuestion()
                 })
             })
@@ -86,7 +97,7 @@ const PlayQuiz = () =>{
         }
 
         renderQuestion();
-    
+
 
     }
     
@@ -119,6 +130,7 @@ const PlayQuiz = () =>{
     }
 
     fillCategoryBlock()
+
 }
 
 
@@ -129,3 +141,4 @@ const nav_title = document.querySelector('.nav-title')
 nav_img.addEventListener('click', ()=>{window.location.reload()})
 nav_title.addEventListener('click', ()=>{window.location.reload()})
 PlayQuiz()
+

@@ -1,6 +1,7 @@
 import './QuizPage.css'
 
 const QuizPage = (quizName) =>{
+    window.scrollTo(0, 0)
     return `
         <div class="quiz-container">
             <div class="quiz-title">${quizName.split("_").join(" ") + " Quiz"}</div>
