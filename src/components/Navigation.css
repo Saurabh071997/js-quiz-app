@@ -1,0 +1,23 @@
+.nav-header{
+    display: flex;
+    padding:0.5rem 1rem;
+    background-color: #155E75;
+    position: sticky;
+    top:0em;
+    z-index: 5;
+}
+
+.nav-img{
+    height:2.5rem;
+    width:2.5rem;
+    border-radius: 50%;
+    cursor:pointer;
+}
+
+.nav-title{
+    font-size: 2rem;
+    flex-grow: 1;
+    text-align: center;
+    color:whitesmoke;
+    cursor:pointer;
+}
